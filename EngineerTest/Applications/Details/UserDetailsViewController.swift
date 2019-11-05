@@ -48,8 +48,8 @@ extension UserDetailsViewController: UICollectionViewDataSource, UICollectionVie
         cell.image.kf.setImage(with: url,
         options: [.processor(resizingProcessor)],
         completionHandler: { [ weak self] image, error, cacheType, imageURL in
-//            self?.imageView.layer.shadowOpacity = 0.5
         })
+        cell.layoutIfNeeded()
         return cell
     }
     
