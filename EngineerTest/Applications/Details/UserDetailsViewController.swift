@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 class UserDetailsViewController: UIViewController {
-
+    
     @IBOutlet var userName: UILabel? 
     @IBOutlet var userImage: UIImageView?
     @IBOutlet var collectionView: UICollectionView?
@@ -20,7 +20,7 @@ class UserDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         setupView()
     }
@@ -31,7 +31,7 @@ class UserDetailsViewController: UIViewController {
         userName?.text = user?.name
         collectionView?.reloadData()
     }
-
+    
 }
 
 extension UserDetailsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -40,7 +40,16 @@ extension UserDetailsViewController: UICollectionViewDataSource, UICollectionVie
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath as IndexPath) as! ItemCell
         let itemUrl = user?.items?[indexPath.row]
         let url = URL(string: itemUrl ?? "")
-        cell.image.kf.setImage(with: url)
+        let size = collectionView.frame.size
+        let count = user?.items?.count ?? 0
+        let cellSize = (count % 2 == 0  ?  size.width / 2 : size.width )
+        let resizingProcessor = ResizingImageProcessor(referenceSize: CGSize(width: cellSize, height: cellSize))
+        cell.image.kf.indicatorType = .activity
+        cell.image.kf.setImage(with: url,
+        options: [.processor(resizingProcessor)],
+        completionHandler: { [ weak self] image, error, cacheType, imageURL in
+//            self?.imageView.layer.shadowOpacity = 0.5
+        })
         return cell
     }
     
@@ -50,7 +59,24 @@ extension UserDetailsViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 30, height: 30)
+        let count = user?.items?.count ?? 0
+        let size = collectionView.frame.size
+        if count % 2 == 0 {
+            // even number
+            let cellSize = size.width / 2
+            return CGSize(width: cellSize - 8, height: cellSize - 8)
+        } else {
+            // odd number
+            if indexPath.row == 0 {
+                let size = collectionView.frame.size
+                let cellSize = size.width
+                return CGSize(width: cellSize, height: cellSize)
+            } else {
+                let size = collectionView.frame.size
+                let cellSize = size.width / 2
+                return CGSize(width: cellSize - 8, height: cellSize - 8)
+            }
+        }
     }
     
 }
