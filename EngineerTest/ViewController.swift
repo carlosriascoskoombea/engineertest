@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import ObjectMapper
 
 class ViewController: UIViewController {
     
@@ -27,8 +28,23 @@ class ViewController: UIViewController {
             "offset": offset,
             "limit": limit
         ]
-        Alamofire.request("http://sd2-hiring.herokuapp.com/api/users", method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
-            
+        Alamofire.request("http://sd2-hiring.herokuapp.com/api/users", method: .get,
+                          parameters: parameters).responseJSON { response in
+            switch response.result {
+            case .success:
+                guard let result = response.result.value as? [String: Any] else { return }
+                guard let data = result["data"] as? [String: Any] else { return }
+                guard let usersDic = data["users"] as?  Array<Any> else { return }
+                let users = Mapper<User>().mapArray(JSONArray: usersDic as! [[String : Any]])
+                guard let userListViewController = UIStoryboard.init(name: "Main",
+                                                                     bundle: nil).instantiateViewController(identifier: "UserListViewController") as? UserListViewController else { return }
+                userListViewController.users = users
+                userListViewController.limit = limit
+                userListViewController.offset = offset
+                self.navigationController?.pushViewController(userListViewController, animated: true)
+            case let .failure(error):
+                print(error)
+            }
         }
     }
     

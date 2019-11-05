@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class Model: Mappable {
+class User: Mappable {
     
     var name: String?
     var image: String?

@@ -18,6 +18,7 @@
 		6F4A68BB2372113C0034F5FC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4A68B92372113C0034F5FC /* Alamofire.framework */; };
 		6F4A68BC2372113C0034F5FC /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4A68BA2372113C0034F5FC /* ObjectMapper.framework */; };
 		6F4A68C02372162C0034F5FC /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4A68BF2372162C0034F5FC /* UserListViewController.swift */; };
+		6F8D277223721F77000CA6E6 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8D277123721F77000CA6E6 /* UserDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		6F4A68B92372113C0034F5FC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = iOS/Frameworks/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		6F4A68BA2372113C0034F5FC /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = iOS/Frameworks/ObjectMapper.framework; sourceTree = SOURCE_ROOT; };
 		6F4A68BF2372162C0034F5FC /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		6F8D277123721F77000CA6E6 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		6F4A68BD237215F80034F5FC /* Applications */ = {
 			isa = PBXGroup;
 			children = (
+				6F8D277023721F61000CA6E6 /* Details */,
 				6F4A68BE237216000034F5FC /* List */,
 			);
 			path = Applications;
@@ -130,6 +133,14 @@
 				6F4A68BF2372162C0034F5FC /* UserListViewController.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		6F8D277023721F61000CA6E6 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				6F8D277123721F77000CA6E6 /* UserDetailsViewController.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +241,7 @@
 			files = (
 				6F4A68C02372162C0034F5FC /* UserListViewController.swift in Sources */,
 				6F4A68B7237210670034F5FC /* User.swift in Sources */,
+				6F8D277223721F77000CA6E6 /* UserDetailsViewController.swift in Sources */,
 				6F4A689F23720E740034F5FC /* ViewController.swift in Sources */,
 				6F4A689B23720E740034F5FC /* AppDelegate.swift in Sources */,
 				6F4A689D23720E740034F5FC /* SceneDelegate.swift in Sources */,
