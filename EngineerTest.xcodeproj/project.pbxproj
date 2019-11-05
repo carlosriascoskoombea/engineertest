@@ -19,6 +19,8 @@
 		6F4A68BC2372113C0034F5FC /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F4A68BA2372113C0034F5FC /* ObjectMapper.framework */; };
 		6F4A68C02372162C0034F5FC /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4A68BF2372162C0034F5FC /* UserListViewController.swift */; };
 		6F8D277223721F77000CA6E6 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8D277123721F77000CA6E6 /* UserDetailsViewController.swift */; };
+		6F8D2775237223E8000CA6E6 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F8D2773237223E8000CA6E6 /* Kingfisher.framework */; };
+		6F8D2776237223E8000CA6E6 /* KingfisherSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F8D2774237223E8000CA6E6 /* KingfisherSwiftUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		6F4A68BA2372113C0034F5FC /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = iOS/Frameworks/ObjectMapper.framework; sourceTree = SOURCE_ROOT; };
 		6F4A68BF2372162C0034F5FC /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		6F8D277123721F77000CA6E6 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
+		6F8D2773237223E8000CA6E6 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = iOS/Frameworks/Kingfisher.framework; sourceTree = SOURCE_ROOT; };
+		6F8D2774237223E8000CA6E6 /* KingfisherSwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KingfisherSwiftUI.framework; path = iOS/Frameworks/KingfisherSwiftUI.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +47,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F8D2776237223E8000CA6E6 /* KingfisherSwiftUI.framework in Frameworks */,
 				6F4A68BC2372113C0034F5FC /* ObjectMapper.framework in Frameworks */,
+				6F8D2775237223E8000CA6E6 /* Kingfisher.framework in Frameworks */,
 				6F4A68BB2372113C0034F5FC /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +118,8 @@
 		6F4A68B82372112B0034F5FC /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				6F8D2773237223E8000CA6E6 /* Kingfisher.framework */,
+				6F8D2774237223E8000CA6E6 /* KingfisherSwiftUI.framework */,
 				6F4A68B92372113C0034F5FC /* Alamofire.framework */,
 				6F4A68BA2372113C0034F5FC /* ObjectMapper.framework */,
 			);
@@ -223,6 +231,8 @@
 			inputPaths = (
 				"$(SRCROOT)/iOS/Frameworks/ObjectMapper.framework",
 				"$(SRCROOT)/iOS/Frameworks/Alamofire.framework",
+				"$(SRCROOT)/iOS/Frameworks/Kingfisher.framework",
+				"$(SRCROOT)/iOS/Frameworks/KingfisherSwiftUI.framework",
 			);
 			outputFileListPaths = (
 			);

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserDetailsViewController: UIViewController {
 
@@ -20,6 +21,14 @@ class UserDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupView()
+    }
+    
+    func setupView() {
+        let url = URL(string: user?.image ?? "")
+        userImage?.kf.setImage(with: url)
+        userName?.text = user?.name
+        
     }
 
 }
